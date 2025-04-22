@@ -18,7 +18,7 @@ def solve_n_queens(n):
             for i in range(n):
                 for j in range(n):
                     if board[i][j]:
-                        result.append(j + 1)  # 1-based index
+                        result.append(j + 1)
             solutions.append(result)
             return
         for col in range(n):
