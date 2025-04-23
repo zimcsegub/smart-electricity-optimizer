@@ -4,13 +4,19 @@ def solve_n_queens(n):
 
     def is_safe(row, col):
         for i in range(row):
-            if board[i][col]:
+            if board[i][col] == 1:
                 return False
-            if col - (row - i) >= 0 and board[i][col - (row - i)]:
+
+        for i, j in zip(range(row - 1, -1, -1), range(col - 1, -1, -1)):
+            if board[i][j] == 1:
                 return False
-            if col + (row - i) < n and board[i][col + (row - i)]:
+
+        for i, j in zip(range(row - 1, -1, -1), range(col + 1, n)):
+            if board[i][j] == 1:
                 return False
+
         return True
+
 
     def solve(row):
         if row == n:

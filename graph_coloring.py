@@ -8,6 +8,7 @@ def graph_coloring(graph):
         for i in range(n):
             if graph[u][i] == 1 and result[i] != -1:
                 used_colors.add(result[i])
+            print(used_colors)
 
         color = 0
         while color in used_colors:
